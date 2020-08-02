@@ -13,24 +13,12 @@ function Home() {
       <BannerMain
         videoTitle={data.categories[0].videos[0].title}
         url={data.categories[0].videos[0].url}
-        videoDescription={'O que é frontend?'}
+        videoDescription="1ª Temporada - Episódio 1"
       />
 
       <Carousel
         ignoreFirstVideo
         category={data.categories[0]}
-      />
-
-      <Carousel
-        category={data.categories[1]}
-      />
-
-      <Carousel
-        category={data.categories[2]}
-      />
-
-      <Carousel
-        category={data.categories[3]}
       />
 
       <Footer />

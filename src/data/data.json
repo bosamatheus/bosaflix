@@ -1,114 +1,64 @@
 {
   "categories": [
     {
-      "title": "Backend",
-      "color": "#008080",
-      "link_extra": {
-        "text": "Desenvolvimento Web",
-        "url": "/"
-      },
-      "videos": [
-        {
-          "title": "PERCURSO em NÍVEL em ÁRVORE BINÁRIA | Estruturas de Dados #14",
-          "url": "https://www.youtube.com/watch?v=UOK7nS2E9xM"
-        },
-        {
-          "title": "Highlight: [EN] Rust - Creating a Discord Bot in Rust Language ⚙️ 🦀",
-          "url": "https://www.youtube.com/watch?v=_OHzVJViQhY"
-        },
-        {
-          "title": "DDD (Domain-Driven Design) // Dicionário do Programador",
-          "url": "https://www.youtube.com/watch?v=GE6asEjTFv8"
-        }, 
-        {
-          "title": "Usando Git Direito | Limpando seus Commits!",
-          "url": "https://www.youtube.com/watch?v=6OokP-NE49k"
-        },
-        {
-          "title": "🏭 The Application Factory Architecture - Bruno Rocha",
-          "url": "https://www.youtube.com/watch?v=xNo-eOfZH5Q"
-        }
-      ]
-    },
-    {
-      "title": "Machine Learning",
-      "color": "#000080",
-      "link_extra": {
-        "text": "Data Science",
-        "url": "/"
-      },
-      "videos": [
-        {
-          "title": "MIT 6.S094: Introduction to Deep Learning and Self-Driving Cars",
-          "url": "https://www.youtube.com/watch?v=1L0TKZQcUtA"
-        },
-        {
-          "title": "StatQuest: Principal Component Analysis (PCA), Step-by-Step",
-          "url": "https://www.youtube.com/watch?v=FgakZw6K1QQ"
-        },
-        {
-          "title": "A* Pathfinding Visualization Tutorial - Python A* Path Finding Tutorial",
-          "url": "https://www.youtube.com/watch?v=JtiK0DOeI4A"
-        },
-        {
-          "title": "Teste de Turing",
-          "url": "https://www.youtube.com/watch?v=BaPGU4JWa34"
-        },
-        {
-          "title": "Chat Bot With PyTorch - NLP And Deep Learning - Python Tutorial (Part 1)",
-          "url": "https://www.youtube.com/watch?v=RpWeNzfSUHw"
-        }
-      ]
-    },
-    {
-      "title": "Música",
-      "color": "#808080",
-      "link_extra": {
-        "text": "Rock and Roll",
-        "url": "/"
-      },
-      "videos": [
-        {
-          "title": "Rival Sons - Keep on Swingin' (Studio Version)",
-          "url": "https://www.youtube.com/watch?v=M1W2kOBvhs4"
-        },
-        {
-          "title": "Motörhead – Overkill (Official Video)",
-          "url": "https://www.youtube.com/watch?v=MlzTET_8SQg"
-        },
-        {
-          "title": "Reckoning Day (Remastered 2004)",
-          "url": "https://www.youtube.com/watch?v=H3AJddEB2a8"
-        },
-        {
-          "title": "Led Zeppelin - Stairway to Heaven Live",
-          "url": "https://www.youtube.com/watch?v=xbhCPt6PZIU"
-        }
-      ]
-    },
-    {
-      "title": "Games",
+      "title": "Pesadelo na Cozinha",
       "color": "#ff0000",
       "link_extra": {
-        "text": "Nerdices",
+        "text": "1ª Temporada (2017)",
         "url": "/"
       },
       "videos": [
         {
-          "title": "COD Warzone - Só SNIPADA CALCULADA 🎯",
-          "url": "https://www.youtube.com/watch?v=liHV3qm2dg8"
+          "title": "Escondidinho da Amada",
+          "url": "https://www.youtube.com/watch?v=fQ_trHn9YlY"
         },
         {
-          "title": "Red Dead Redemption 2 Online - Chumbo Quente",
-          "url": "https://www.youtube.com/watch?v=HY6T2zcsSsQ"
+          "title": "Najjah",
+          "url": "https://www.youtube.com/watch?v=XCrnIlLST0s"
         },
         {
-          "title": "God of War 4",
-          "url": "https://www.youtube.com/watch?v=FyIwEFXOcaE"
+          "title": "Saia do Padre",
+          "url": "https://www.youtube.com/watch?v=_NtpuucRpno"
+        }, 
+        {
+          "title": "Nahamalho",
+          "url": "https://www.youtube.com/watch?v=BBMMHSS8vPs"
         },
         {
-          "title": "Resident Evil 8",
-          "url": "https://www.youtube.com/watch?v=JSapXD9vxYA"
+          "title": "Hooker",
+          "url": "https://www.youtube.com/watch?v=QszCcl4F4VA"
+        },
+        {
+          "title": "Fina Farina",
+          "url": "https://www.youtube.com/watch?v=NHPa4vLZycE"
+        },
+        {
+          "title": "Samosa & Company",
+          "url": "https://www.youtube.com/watch?v=BFDMXJMQRfs"
+        },
+        {
+          "title": "Burg One",
+          "url": "https://www.youtube.com/watch?v=IoWbJPY2wec"
+        },
+        {
+          "title": "La Cabaña",
+          "url": "https://www.youtube.com/watch?v=6Sai-lw_TW4"
+        },
+        {
+          "title": "Los Molinos",
+          "url": "https://www.youtube.com/watch?v=nl3cAT_q28g"
+        },
+        {
+          "title": "Sal e Pimenta",
+          "url": "https://www.youtube.com/watch?v=5j26ym6OAyI"
+        },
+        {
+          "title": "Dedo de la Chica",
+          "url": "https://www.youtube.com/watch?v=UakUv3qy3Y8"
+        },
+        {
+          "title": "Trilha da Costela",
+          "url": "https://www.youtube.com/watch?v=Ik-2ZXzPEE4"
         }
       ]
     }
