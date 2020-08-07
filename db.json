@@ -1,10 +1,93 @@
 {
     "categories": [
-        {
-            "id": 1,
-            "name": "Pesadelo na Cozinha",
-            "description": "1ª Temporada (2017)",
-            "color": "#cbd1ff"
+      {
+        "id": 1,
+        "title": "Pesadelo na Cozinha",
+        "color": "#ff0000",
+        "extraLink": {
+          "text": "1ª Temporada (2017)",
+          "url": "/"
         }
-    ]
+	  }
+    ],
+    "videos": [
+        {
+			"id": 1,
+			"categoryId": 1,
+			"title": "Escondidinho da Amada",
+			"url": "https://www.youtube.com/watch?v=fQ_trHn9YlY"
+        },
+        {
+			"id": 2,
+			"categoryId": 1,
+			"title": "Najjah",
+			"url": "https://www.youtube.com/watch?v=XCrnIlLST0s"
+        },
+        {
+        	"id": 3,
+        	"categoryId": 1,
+          	"title": "Saia do Padre",
+          	"url": "https://www.youtube.com/watch?v=_NtpuucRpno"
+        }, 
+        {
+			"id": 4,
+			"categoryId": 1,
+			"title": "Nahamalho",
+			"url": "https://www.youtube.com/watch?v=BBMMHSS8vPs"
+        },
+        {
+        	"id": 5,
+        	"categoryId": 1,
+          	"title": "Hooker",
+          	"url": "https://www.youtube.com/watch?v=QszCcl4F4VA"
+        },
+        {
+			"id": 6,
+            "categoryId": 1,
+          	"title": "Fina Farina",
+          	"url": "https://www.youtube.com/watch?v=NHPa4vLZycE"
+        },
+        {
+            "id": 7,
+            "categoryId": 1,
+          	"title": "Samosa & Company",
+          	"url": "https://www.youtube.com/watch?v=BFDMXJMQRfs"
+        },
+        {
+            "id": 8,
+            "categoryId": 1,
+          	"title": "Burg One",
+          	"url": "https://www.youtube.com/watch?v=IoWbJPY2wec"
+        },
+        {
+			"id": 9,
+			"categoryId": 1,
+			"title": "La Cabaña",
+			"url": "https://www.youtube.com/watch?v=6Sai-lw_TW4"
+        },
+        {
+			"id": 10,
+			"categoryId": 1,
+			"title": "Los Molinos",
+			"url": "https://www.youtube.com/watch?v=nl3cAT_q28g"
+        },
+        {
+			"id": 11,
+			"categoryId": 1,
+			"title": "Sal e Pimenta",
+			"url": "https://www.youtube.com/watch?v=5j26ym6OAyI"
+        },
+        {
+			"id": 12,
+			"categoryId": 1,
+			"title": "Dedo de la Chica",
+			"url": "https://www.youtube.com/watch?v=UakUv3qy3Y8"
+        },
+        {
+			"id": 13,
+			"categoryId": 1,
+			"title": "Trilha da Costela",
+			"url": "https://www.youtube.com/watch?v=Ik-2ZXzPEE4"
+		}
+	]
 }

@@ -1,28 +1,57 @@
-import React from 'react';
-import Menu from '../../components/Menu'
+import React, { useEffect, useState } from 'react';
 import BannerMain from '../../components/BannerMain';
 import Carousel from '../../components/Carousel';
-import Footer from '../../components/Footer';
-import data from '../../data/data.json';
+import categoriesRepository from '../../repositories/categories';
+import TemplateDefault from '../../components/TemplateDefault';
 
 function Home() {
+  const [values, setValues] = useState([]);
+
+  useEffect(() => {
+    categoriesRepository.getAllWithVideos()
+      .then((categoriesWithVideos) => {
+        setValues(categoriesWithVideos);
+      })
+      .catch((err) => {
+        // eslint-disable-next-line no-alert
+        alert(err.message);
+      });
+  }, []);
+
   return (
-    <div style={{ background: '#141414' }}>
-      <Menu />
+    <TemplateDefault paddingAll={0}>
+      {values.length === 0 && (
+        <div>
+          Loading...
+        </div>
+      )}
 
-      <BannerMain
-        videoTitle={data.categories[0].videos[0].title}
-        url={data.categories[0].videos[0].url}
-        videoDescription="1ª Temporada - Episódio 1"
-      />
+      {values.map((category, index) => {
+        if (index === 0) {
+          return (
+            <div key={category.id}>
+              <BannerMain
+                videoTitle={values[0].videos[0].title}
+                url={values[0].videos[0].url}
+                videoDescription={values[0].videos[0].description}
+              />
+              <Carousel
+                ignoreFirstVideo
+                category={values[0]}
+              />
+            </div>
+          );
+        }
 
-      <Carousel
-        ignoreFirstVideo
-        category={data.categories[0]}
-      />
+        return (
+          <Carousel
+            key={category.id}
+            category={category}
+          />
+        );
+      })}
 
-      <Footer />
-    </div>
+    </TemplateDefault>
   );
 }
 

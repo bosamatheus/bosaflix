@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import TemplateDefault from '../../../components/TemplateDefault';
 import FormField from '../../../components/FormField';
 import Button from '../../../components/Button';
+import useForm from '../../../hooks/useForm';
 
 function RegistrationCategory() {
   const defaultValues = {
@@ -10,28 +11,20 @@ function RegistrationCategory() {
     description: '',
     color: '#000000',
   };
-  const [values, setValues] = useState(defaultValues);
+
+  const { values, handleChange, clearForm } = useForm(defaultValues);
+
   const [categories, setCategories] = useState([]);
-
-  function setValue(key, value) {
-    setValues({
-      ...values,
-      [key]: value,
-    });
-  }
-
-  function handleChange(event) {
-    const { name, value } = event.target;
-    setValue(name, value);
-  }
 
   function handleSubmit(event) {
     event.preventDefault();
+
     setCategories([
       ...categories,
       values,
     ]);
-    setValues(defaultValues);
+
+    clearForm();
   }
 
   useEffect(() => {
@@ -51,15 +44,14 @@ function RegistrationCategory() {
       <h1>
         Cadastro de categoria:
         {' '}
-        {values.name}
+        {values.title}
       </h1>
 
       <form style={{ backgroundColor: values.color }} onSubmit={handleSubmit}>
         <FormField
           label="Nome"
-          type="text"
-          name="name"
-          value={values.name}
+          name="title"
+          value={values.title}
           onChange={handleChange}
         />
 
@@ -92,8 +84,8 @@ function RegistrationCategory() {
 
       <ul>
         {categories.map((category) => (
-          <li key={`${category.name}`}>
-            {category.name}
+          <li key={`${category.title}`}>
+            {category.title}
           </li>
         ))}
       </ul>
