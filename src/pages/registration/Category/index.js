@@ -4,40 +4,44 @@ import TemplateDefault from '../../../components/TemplateDefault';
 import FormField from '../../../components/FormField';
 import Button from '../../../components/Button';
 import useForm from '../../../hooks/useForm';
+import categoriesRepository from '../../../repositories/categories';
 
 function RegistrationCategory() {
   const defaultValues = {
-    name: '',
+    title: '',
     description: '',
     color: '#000000',
   };
-
   const { values, handleChange, clearForm } = useForm(defaultValues);
-
   const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    categoriesRepository.getAll()
+      .then((categoriesFromServer) => {
+        setCategories([
+          ...categoriesFromServer,
+        ]);
+      });
+  }, []);
 
   function handleSubmit(event) {
     event.preventDefault();
 
-    setCategories([
-      ...categories,
-      values,
-    ]);
+    categoriesRepository.create({
+      title: values.title,
+      description: values.description,
+      color: values.color,
+    })
+      .then((categoryFromServer) => {
+        // eslint-disable-next-line no-console
+        console.log('categoryFromServer', categoryFromServer);
+        // eslint-disable-next-line no-alert
+        alert('Categoria cadastrada com sucesso!');
+        clearForm();
+      });
 
     clearForm();
   }
-
-  useEffect(() => {
-    const URL = window.location.hostname.includes('localhost')
-      ? 'http://localhost:8080/categories'
-      : 'https://bosaflix.herokuapp.com/categories';
-    fetch(URL).then(async (response) => {
-      const jsonResponse = await response.json();
-      setCategories([
-        ...jsonResponse,
-      ]);
-    });
-  }, []);
 
   return (
     <TemplateDefault>

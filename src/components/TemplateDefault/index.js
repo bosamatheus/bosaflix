@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import Menu from '../Menu';
 import Footer from '../Footer';
@@ -15,7 +16,9 @@ const Main = styled.main`
     `}
 `;
 
-function TemplateDefault({ children, paddingAll }) {
+function TemplateDefault({
+  children, paddingAll,
+}) {
   return (
     <>
       <Menu />
@@ -26,5 +29,14 @@ function TemplateDefault({ children, paddingAll }) {
     </>
   );
 }
+
+TemplateDefault.defaultProps = {
+  paddingAll: 'None',
+};
+
+TemplateDefault.propTypes = {
+  children: PropTypes.element.isRequired,
+  paddingAll: PropTypes.string,
+};
 
 export default TemplateDefault;

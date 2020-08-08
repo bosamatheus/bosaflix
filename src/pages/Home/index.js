@@ -33,7 +33,7 @@ function Home() {
               <BannerMain
                 videoTitle={values[0].videos[0].title}
                 url={values[0].videos[0].url}
-                videoDescription={values[0].videos[0].description}
+                videoDescription={values[0].description}
               />
               <Carousel
                 ignoreFirstVideo

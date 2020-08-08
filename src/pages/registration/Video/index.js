@@ -1,30 +1,46 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import TemplateDefault from '../../../components/TemplateDefault';
 import FormField from '../../../components/FormField';
 import useForm from '../../../hooks/useForm';
 import Button from '../../../components/Button';
+import videosRepository from '../../../repositories/videos';
+import categoriesRepository from '../../../repositories/categories';
 
 function RegistrationVideo() {
   const history = useHistory();
+  const [categories, setCategories] = useState([]);
+  const categoryTitles = categories.map(({ title }) => title);
   const { values, handleChange } = useForm({
-    title: 'Dedo de la Chica',
-    url: 'https://www.youtube.com/watch?v=UakUv3qy3Y8',
-    category: 'Pesadelo na Cozinha',
+    title: '',
+    url: '',
+    category: '',
   });
-  const [videos, setVideos] = useState([]);
+
+  useEffect(() => {
+    categoriesRepository.getAll()
+      .then((categoriesFromServer) => {
+        setCategories(categoriesFromServer);
+      });
+  }, []);
 
   function handleSubmit(event) {
     event.preventDefault();
 
-    setVideos([
-      ...videos,
-      values,
-    ]);
+    const categoryFound = categories.find((category) => {
+      return category.title === values.categories;
+    });
 
-    // eslint-disable-next-line no-alert
-    alert('Vídeo cadastrado com sucesso!');
-    history.push('/');
+    videosRepository.create({
+      categoryId: categoryFound.id,
+      title: values.title,
+      url: values.url,
+    })
+      .then(() => {
+        // eslint-disable-next-line no-alert
+        alert('Vídeo cadastrado com sucesso!');
+        history.push('/');
+      });
   }
 
   return (
@@ -51,6 +67,7 @@ function RegistrationVideo() {
           name="category"
           value={values.category}
           onChange={handleChange}
+          suggestions={categoryTitles}
         />
 
         <Button>
