@@ -16,40 +16,36 @@ function RegistrationCategory() {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    categoriesRepository.getAll()
+    categoriesRepository
+      .getAll()
       .then((categoriesFromServer) => {
-        setCategories([
-          ...categoriesFromServer,
-        ]);
+        setCategories(categoriesFromServer);
       });
   }, []);
 
   function handleSubmit(event) {
     event.preventDefault();
 
-    categoriesRepository.create({
-      title: values.title,
-      description: values.description,
-      color: values.color,
-    })
+    categoriesRepository
+      .create({
+        ...values,
+      })
       .then((categoryFromServer) => {
-        // eslint-disable-next-line no-console
-        console.log('categoryFromServer', categoryFromServer);
-        // eslint-disable-next-line no-alert
-        alert('Categoria cadastrada com sucesso!');
+        setCategories([...categories, categoryFromServer]);
         clearForm();
-      });
 
-    clearForm();
+        // eslint-disable-next-line no-alert
+        alert('Categoria cadastrada com sucesso.');
+      })
+      .catch(() => {
+        // eslint-disable-next-line no-alert
+        alert('Ocorreu um erro ao cadastrar a categoria. Tente novamente.');
+      });
   }
 
   return (
     <TemplateDefault>
-      <h1>
-        Cadastro de categoria:
-        {' '}
-        {values.title}
-      </h1>
+      <h1>Cadastro de categoria</h1>
 
       <form style={{ backgroundColor: values.color }} onSubmit={handleSubmit}>
         <FormField
@@ -86,17 +82,14 @@ function RegistrationCategory() {
         </div>
       )}
 
-      <ul>
-        {categories.map((category) => (
-          <li key={`${category.title}`}>
-            {category.title}
-          </li>
-        ))}
-      </ul>
-
-      <Link to="/">
-        Ir para home
+      <br />
+      <Link to="/registration/video">
+        <Button>
+          Voltar
+        </Button>
       </Link>
+      <br />
+      <br />
     </TemplateDefault>
   );
 }

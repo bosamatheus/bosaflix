@@ -27,19 +27,22 @@ function RegistrationVideo() {
   function handleSubmit(event) {
     event.preventDefault();
 
-    const categoryFound = categories.find((category) => {
-      return category.title === values.categories;
-    });
+    const categoryFound = categories.find((category) => category.title === values.categories);
 
-    videosRepository.create({
-      categoryId: categoryFound.id,
-      title: values.title,
-      url: values.url,
-    })
+    videosRepository
+      .create({
+        categoryId: categoryFound.id,
+        title: values.title,
+        url: values.url,
+      })
       .then(() => {
         // eslint-disable-next-line no-alert
         alert('Vídeo cadastrado com sucesso!');
         history.push('/');
+      })
+      .catch(() => {
+        // eslint-disable-next-line no-alert
+        alert('Ocorreu um erro ao cadastrar o vídeo. Tente novamente.');
       });
   }
 
@@ -75,9 +78,14 @@ function RegistrationVideo() {
         </Button>
       </form>
 
+      <br />
       <Link to="/registration/category">
-        Cadastrar categoria
+        <Button>
+          Nova categoria
+        </Button>
       </Link>
+      <br />
+      <br />
     </TemplateDefault>
   );
 }

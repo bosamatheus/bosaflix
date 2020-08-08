@@ -35,8 +35,8 @@ TemplateDefault.defaultProps = {
 };
 
 TemplateDefault.propTypes = {
-  children: PropTypes.element.isRequired,
-  paddingAll: PropTypes.string,
+  children: PropTypes.node.isRequired,
+  paddingAll: PropTypes.node,
 };
 
 export default TemplateDefault;
